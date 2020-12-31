@@ -1,0 +1,409 @@
+/* Slideshow container */
+
+body {
+    background: rgb(223, 154, 166);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+h2 {
+    padding: 24px;
+    color: gold;
+    border-radius: 8px;
+    margin: 0;
+    font-size: 60px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+p {
+    line-height: 2;
+    font-size: 20px;
+    color: gold;
+}
+
+main {
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+
+/* inputs */
+
+input,
+textarea {
+    height: 32px;
+    padding: 0 16px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 15px;
+    border: none;
+    box-shadow: inset 8px 3px 18px -4px rgba(0, 0, 0, 0.4);
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+}
+
+.cbb-container {
+    max-width: 40%;
+    position: relative;
+    margin: auto;
+    /* padding: 5px; */
+}
+
+
+/* Hide the images by default */
+
+.cbbSlides {
+    display: none;
+    height: 100%;
+    width: 100%;
+}
+
+.cbbSlides img {
+    width: inherit;
+    height: 800px;
+}
+
+
+/* Next & previous buttons */
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+}
+
+
+/* Position the "next button" to the right */
+
+.next {
+    right: -50px;
+    border-radius: 3px 3px 3px 3px;
+}
+
+.prev {
+    left: -50px;
+    border-radius: 3px 3px 3px 3px;
+}
+
+
+/* On hover, add a black background color with a little bit see-through */
+
+.prev:hover,
+.next:hover {
+    color: white;
+    background-color: white;
+}
+
+
+/* The dots/bullets/indicators */
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: gold;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+    background-color: white;
+}
+
+
+/* navigation */
+
+nav {
+    height: 72px;
+    /* background: gold; */
+    width: 100%;
+    margin: 0;
+    position: fixed;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 16px 0 0;
+    box-sizing: border-box;
+    z-index: 100;
+}
+
+nav a {
+    padding: 0 32px;
+    color: gold;
+    transition: 0.4s;
+}
+
+nav a:hover {
+    text-decoration: none;
+    color: pink;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+    margin: 0;
+}
+
+.active {
+    color: pink;
+}
+
+#logo-img {
+    display: flex;
+    height: 100%;
+    background: 111;
+    padding: 0 32px;
+    align-items: center;
+    transition: .4s;
+    color: white;
+}
+
+#logo-img img {
+    height: 100px;
+    width: 140px;
+    padding-top: 25px;
+}
+
+#menu-icon {
+    height: 100%;
+    font-size: 28px;
+    padding: 0 4px;
+    color: white;
+    display: none;
+    align-items: center;
+}
+
+
+/* search icon */
+
+#search-icon {
+    color: white;
+    padding-right: 60px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+#search-icon:hover {
+    color: grey;
+}
+
+section {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.section-heading {
+    font-size: 32;
+    font-family: 'Courier New', Courier, monospace;
+    transition: all 0.4s;
+    display: inline-block;
+    padding: 30px 60px;
+    text-align: center;
+    padding-top: 100px;
+}
+
+
+/* Searchbox
+
+#searchbox {
+    position: fixed;
+    right: 0;
+    top: 24px;
+    width: 500px;
+    pointer-events: none;
+    z-index: 50;
+    transition: 0.4s;
+}
+
+#searchbox input {
+    height: 48px;
+    width: 100%;
+} */
+
+
+/* remove slideout menu since bigger screen but use in the mobile arrangement */
+
+#slideout-menu {
+    display: none;
+    background: grey;
+    z-index: 100;
+    position: fixed;
+    transition: 0.4s;
+    margin-top: 72px;
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    pointer-events: none;
+}
+
+#slideout-menu ul {
+    list-style: none;
+    padding: 0 32px;
+}
+
+#slideout-menu ul li {
+    padding: 8px;
+}
+
+#slideout-menu a {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    color: white;
+}
+
+#slideout-menu input {
+    width: 85%;
+    padding: 8px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    text-align: center;
+}
+
+
+/* footer */
+
+footer {
+    /* background: grey; */
+    height: 50px;
+    text-align: center;
+    padding-top: 25px;
+    border: black;
+    width: fit-content;
+}
+
+
+/* Fading animation */
+
+.fade-in {
+    animation: fadeIn ease-in 2s;
+    -webkit-animation: fade ease-in-out 5s;
+    -moz-animation: fadeIn ease-out 2s;
+    /* -o-animation: fadeIn ease-out 2s;
+    -ms-animation: fadeIn ease-out 20s; */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0.2;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadeIn {
+    from {
+        opacity: 0.2;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0.2;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes fadeIn {
+    from {
+        opacity: 0.2;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@-ms-keyframes fadeIn {
+    from {
+        opacity: 0.2;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* Media Queries */
+
+@media(max-width:900px) {
+    nav ul {
+        display: none;
+    }
+    #menu-icon {
+        display: flex;
+    }
+    #slideout-menu {
+        display: block;
+    }
+    .cbbSlides {
+        width: 100%;
+        border-left: 0;
+    }
+}
+
+@media(max-width:719px) {
+    main {
+        width: 95%;
+    }
+    section {
+        flex-direction: column;
+    }
+}
+
+@media(max-width:600px) {
+    main {
+        width: 100%;
+    }
+    h2 {
+        font-size: 20px;
+    }
+    #banner h3 {
+        font-size: 20px;
+    }
+    #logo-img {
+        padding: 0;
+    }
+}
+
+@media(min-width:720px) {
+    main {
+        width: 95%;
+    }
+}
+
+@media(min-width:1200px) {
+    main {
+        width: 85%;
+    }
+}
